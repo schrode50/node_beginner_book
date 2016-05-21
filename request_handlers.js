@@ -32,12 +32,12 @@ upload = (res, req) => {
   form.parse(req, (err, fields, files) => {
     console.log('parsing done');
 
-    fs.rename(files.upload.path, "./tmp/test.png", (err) => {
-      if(err) {
-        fs.unlink('./tmp/test.png');
-        fs.rename(files.upload.path, './tmp/test.png');
-      }
-    });
+    // fs.rename(files.upload.path, "./tmp/test.png", (err) => {
+    //   if(err) {
+    //     fs.unlink('./tmp/test.png');
+    //     fs.rename(files.upload.path, './tmp/test.png');
+    //   }
+    // });
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write("received image:<br/>");
     res.write("<img src='/show' />");
